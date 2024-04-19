@@ -1,9 +1,6 @@
 # Set to superior editing mode
 set -o vi
 
-# keybinds
-bind -x '"\C-l":clear'
-
 # ~~~~~~~~~~~~~~~ Prompt ~~~~~~~~~~~~~~~~~~~~~~~~
 
 eval "$(starship init bash)"
