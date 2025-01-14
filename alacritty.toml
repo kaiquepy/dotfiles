@@ -1,6 +1,9 @@
 # themes from https://github.com/alacritty/alacritty-theme
 
-import = ["~/.config/alacritty/themes/themes/gruvbox_dark.toml"]
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/gruvbox_dark.toml"
+]
 
 [font]
 size = 12
@@ -8,6 +11,9 @@ size = 12
 [font.normal]
 family = "FiraCode Nerd Font Mono"
 
+[window]
+decorations = "none"
+
 [window.padding]
-x = 7
+x = 10
 y = 0
