@@ -42,3 +42,4 @@ apt-get install php-common php-cli
 
 info "Instalando o Discord"
 wget "https://discord.com/api/download?platform=linux&format=deb" -O discord.deb
+apt install -y ./discord.deb
