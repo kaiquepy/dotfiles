@@ -1,2 +1,14 @@
+# Include system-wide settings from /etc/inputrc to ensure default configurations are applied.
+$include /etc/inputrc
+
+# Enable case-insensitive completion to make tab-completion user-friendly.
+set completion-ignore-case On
+
+# Append a slash to symlinked directories during completion for clear directory identification.
+set mark-symlinked-directories On
+
+# Set the timeout for detecting key sequences to 10 milliseconds for responsive key bindings.
 set keyseq-timeout 10
+
+# Display the current editing mode in the prompt to provide visual feedback.
 set show-mode-in-prompt on
