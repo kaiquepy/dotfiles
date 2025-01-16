@@ -9,7 +9,9 @@ eval "$(starship init bash)"
 
 # cd
 alias ..="cd .."
-alias c="clear"
+
+# ip
+alias ip='ip -c'
 
 # Simple copy/past clipboard
 alias fromclip='xclip -o -sel copy'
