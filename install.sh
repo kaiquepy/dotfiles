@@ -59,7 +59,10 @@ apt-get install -y docker-compose-plugin
 
 
 info "Instalando o Virtual Box"
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/oracle-virtualbox-2016.gpg] https://download.virtualbox.org/virtualbox/debian bookworm contrib" >> /etc/apt/sources.list
+VIRTUALBOX_REPO="deb [arch=amd64 signed-by=/usr/share/keyrings/oracle-virtualbox-2016.gpg] https://download.virtualbox.org/virtualbox/debian bookworm contrib"
+if ! grep -Fxq "$VIRTUALBOX_REPO" /etc/apt/sources.list; then
+  echo "$VIRTUALBOX_REPO" >> /etc/apt/sources.list
+fi
 wget -O- https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo gpg --yes --output /usr/share/keyrings/oracle-virtualbox-2016.gpg --dearmor
 sudo apt-get update
 apt-get install -y virtualbox-7.1
@@ -116,7 +119,10 @@ apt install -y ./chrome.deb
 
 info "Instalando Spotify"
 curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+SPOTIFY_REPO="deb http://repository.spotify.com stable non-free"
+if ! grep -Fxq "$SPOTIFY_REPO" /etc/apt/sources.list.d/spotify.list; then
+  echo "$SPOTIFY_REPO" > /etc/apt/sources.list.d/spotify.list
+fi
 sudo apt-get update && sudo apt-get install spotify-client
 
 
