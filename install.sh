@@ -141,6 +141,7 @@ done
 
 info "Configurando dotfiles"
 DOTFILES=(
+  ".bashrc"
   ".bash_aliases"
   ".inputrc"
   ".vimrc"
