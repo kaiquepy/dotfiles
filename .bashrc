@@ -3,8 +3,7 @@
 
 # Prompt Settings
 source "$HOME/.git-prompt.sh"
-PS1_CMD1=$(__git_ps1 ' (%s)')
-PS1='\[\e[38;5;148;1m\]\w\[\e[0;38;5;157m\]${PS1_CMD1}\n\[\e[38;5;220m\]\$\[\e[0m\] '
+PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 " (%s)")'; PS1='\n\[\e[38;5;150;1m\]\w\[\e[0;38;5;157m\]${PS1_CMD1}\n\[\e[38;5;221m\]\$\[\e[0m\] '
 
 # Enable Bash completion
 if [ -f /etc/bash_completion ]; then
@@ -37,3 +36,8 @@ export HISTCONTROL=ignoredups:erasedups
 export HISTIGNORE="ls:exit:pwd:clear:history"
 export HISTTIMEFORMAT='%F %T '
 export PROMPT_COMMAND='history -a'
+
+
+shopt -s cdspell
+shopt -s dirspell
+shopt -s autocd
