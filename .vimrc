@@ -42,6 +42,7 @@ set smartindent
 set smarttab
 
 " color scheme
+let g:gruvbox_italic=1
 colorscheme gruvbox
 
 " high contrast
