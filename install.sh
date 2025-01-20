@@ -157,7 +157,7 @@ done
 
 info "Configurando alacritty"
 sudo -u "$SUDO_USER" mkdir -p "$USER_HOME/.config/alacritty/"
-sudo -u "$SUDO_USER" ln -sf "$SUDO_HOME/.dotfiles/alacritty.toml" "$USER_HOME/.config/alacritty/alacritty.toml"
+sudo -u "$SUDO_USER" ln -sf "$USER_HOME/.dotfiles/alacritty.toml" "$USER_HOME/.config/alacritty/alacritty.toml"
 
 info "Baixando git-prompt.sh"
 GIT_PROMPT_URL="https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh"
