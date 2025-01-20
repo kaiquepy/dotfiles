@@ -3,7 +3,7 @@
 
 # Prompt Settings
 source "$HOME/.git-prompt.sh"
-PS1_CMD1="$(__git_ps1 ' (%s)')"
+PS1_CMD1=$(__git_ps1 ' (%s)')
 PS1='\[\e[38;5;148;1m\]\w\[\e[0;38;5;157m\]${PS1_CMD1}\n\[\e[38;5;220m\]\$\[\e[0m\] '
 
 # Enable Bash completion
