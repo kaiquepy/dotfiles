@@ -143,3 +143,7 @@ for file in "${DOTFILES[@]}"; do
   sudo -u "$SUDO_USER" ln -sf "$USER_HOME/.dotfiles/$file" "$USER_HOME/$file"
   info "$file configurado."
 done
+
+
+info "Instalando tema Gruvbox vim"
+git clone https://github.com/morhetz/gruvbox.git "$USER_HOME/.vim/pack/default/start/gruvbox"
