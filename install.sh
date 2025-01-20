@@ -137,6 +137,7 @@ info "Configurando dotfiles"
 DOTFILES=(
   ".bash_aliases"
   ".inputrc"
+  ".vimrc"
 )
 for file in "${DOTFILES[@]}"; do
   sudo -u "$SUDO_USER" ln -sf "$USER_HOME/.dotfiles/$file" "$USER_HOME/$file"
