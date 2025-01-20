@@ -41,6 +41,10 @@ info "Instalando xclip"
 apt-get install -y xclip
 
 
+info "Instalando o alacritty"
+apt-get install -y alacritty
+
+
 info "Instalando o Docker"
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
@@ -151,6 +155,9 @@ for file in "${DOTFILES[@]}"; do
   info "$file configurado."
 done
 
+info "Configurando alacritty"
+sudo -u "$SUDO_USER" mkdir -p "$USER_HOME/.config/alacritty/"
+sudo -u "$SUDO_USER" ln -sf "$SUDO_HOME/.dotfiles/alacritty.toml" "$USER_HOME/.config/alacritty/alacritty.toml"
 
 info "Baixando git-prompt.sh"
 GIT_PROMPT_URL="https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh"
