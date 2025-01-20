@@ -123,6 +123,22 @@ sudo apt-get update && sudo apt-get install spotify-client
 info "Removendo .deb baixados"
 rm *.deb
 
+
 info "Criando diretórios para os repositórios"
-mkdir -p "$USER_HOME/repos/pessoal"
-mkdir -p "$USER_HOME/repos/nuria"
+REPOS=("$USER_HOME/repos/pessoal" "$USER_HOME/repos/work")
+for dir in "${REPOS[@]}"; do
+  if [ ! -d "$dir" ]; then
+    sudo -u "$SUDO_USER" mkdir -p "$dir"
+  fi
+done
+
+
+info "Configurando dotfiles"
+DOTFILES=(
+  ".bash_aliases"
+  ".inputrc"
+)
+for file in "${DOTFILES[@]}"; do
+  sudo -u "$SUDO_USER" ln -sf "$USER_HOME/.dotfiles/$file" "$USER_HOME/$file"
+  info "$file configurado."
+done
