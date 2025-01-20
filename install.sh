@@ -152,5 +152,16 @@ for file in "${DOTFILES[@]}"; do
 done
 
 
+info "Baixando git-prompt.sh"
+GIT_PROMPT_URL="https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh"
+GIT_PROMPT_DEST="$USER_HOME/.git-prompt.sh"
+if [ ! -f "$GIT_PROMPT_DEST" ]; then
+  sudo -u "$SUDO_USER" curl -o "$GIT_PROMPT_DEST" "$GIT_PROMPT_URL"
+  info "git-prompt.sh baixado em $GIT_PROMPT_DEST"
+else
+  info "git-prompt.sh já existe em $GIT_PROMPT_DEST"
+fi
+
+
 info "Instalando tema Gruvbox vim"
 git clone https://github.com/morhetz/gruvbox.git "$USER_HOME/.vim/pack/default/start/gruvbox"
