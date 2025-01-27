@@ -47,3 +47,9 @@ colorscheme gruvbox
 
 " high contrast
 set background=dark
+
+
+" NERDTree
+let NERDTreeMinimalUI=1
+nnoremap <C-n> :NERDTreeFocus<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>

@@ -172,3 +172,10 @@ fi
 
 info "Instalando tema Gruvbox vim"
 git clone https://github.com/morhetz/gruvbox.git "$USER_HOME/.vim/pack/default/start/gruvbox"
+
+info "Instalando NERDTree"
+git clone https://github.com/preservim/nerdtree.git "$USER_HOME/.vim/pack/vendor/start/nerdtree"
+vim -u NONE -c "helptags ~/.vim/pack/vendor/start/nerdtree/doc" -c q
+
+info "Instalando vim-polyglot"
+git clone --depth 1 https://github.com/sheerun/vim-polyglot "$USER_HOME/.vim/pack/plugins/start/vim-polyglot"
