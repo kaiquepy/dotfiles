@@ -2,8 +2,19 @@
 [[ $- != *i* ]] && return
 
 # Prompt Settings
-source "$HOME/.git-prompt.sh"
-PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 " (%s)")'; PS1='\n\[\e[38;5;150;1m\]\w\[\e[0;38;5;157m\]${PS1_CMD1}\n\[\e[38;5;221m\]\$\[\e[0m\] '
+if [ -f ~/.git-prompt.sh ]; then
+    source ~/.git-prompt.sh
+fi
+
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWSTASHSTATE=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
+export GIT_PS1_SHOWUPSTREAM="auto"
+export GIT_PS1_SHOWCOLORHINTS=1
+
+# Defino PS1 prompt
+export PS1='\n\[\e[38;5;150;1m\]\w\[\e[0;38;5;157m\]$(__git_ps1 " (%s)")\n\[\e[38;5;221m\]\$\[\e[0m\] '
+
 
 # Enable Bash completion
 if [ -f /etc/bash_completion ]; then
