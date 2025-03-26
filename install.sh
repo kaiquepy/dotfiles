@@ -149,6 +149,7 @@ DOTFILES=(
   ".bash_aliases"
   ".inputrc"
   ".vimrc"
+  ".tmux.conf"
 )
 for file in "${DOTFILES[@]}"; do
   sudo -u "$SUDO_USER" ln -sf "$USER_HOME/.dotfiles/$file" "$USER_HOME/$file"
@@ -179,3 +180,9 @@ vim -u NONE -c "helptags ~/.vim/pack/vendor/start/nerdtree/doc" -c q
 
 info "Instalando vim-polyglot"
 git clone --depth 1 https://github.com/sheerun/vim-polyglot "$USER_HOME/.vim/pack/plugins/start/vim-polyglot"
+
+
+info "Instalando ferramentas de Pentest"
+sudo apt-get install -y nmap 
+sudo -u "$SUDO_USER" /usr/local/go/bin/go install -v github.com/OJ/gobuster/v3@latest
+sudo -u "$SUDO_USER" /usr/local/go/bin/go install -v github.com/ffuf/ffuf/v2@latest 
